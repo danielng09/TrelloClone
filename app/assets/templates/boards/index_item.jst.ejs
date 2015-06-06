@@ -1,1 +1,5 @@
-<%= board.escape('title') %> created by <%= board.escape('user_id') %>
+<a href="#/boards/<%= board.id %>">
+  <%= board.escape('title') %>
+</a>
+
+<button class="delete-board btn btn-danger pull-right btn-sm">Delete</button>
