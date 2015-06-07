@@ -1,0 +1,18 @@
+div.list {
+  float: left;
+  border: #0099FF 5px solid;
+  background-color: #ADD6FF;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 25px;
+  width: 200px;
+  min-height: 300px;
+}
+
+div.list.new-list {
+  padding: 12px;
+}
+
+div.card {
+  height: 23px;
+}

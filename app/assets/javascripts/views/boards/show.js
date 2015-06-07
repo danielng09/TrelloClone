@@ -1,34 +1,37 @@
 TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
-  template: JST['boards/show_board'],
+  template: JST['boards/show'],
 
   initialize: function (options) {
     this.model.lists().board = options.model;
-    this.listenTo(this.model.lists(), 'add', this.addBoardSubview);
-    this.listenTo(this.model, 'sync add', this.render);
+    this.listenTo(this.model.lists(), 'add', this.addListSubview);
+    this.listenTo(this.model.lists(), 'remove', this.removeListSubview);
+    this.listenTo(this.model, 'sync', this.render);
 
-    this.model.lists().each( function (list) {
-      this.addBoardSubview(list);
+    this.model.lists().each(function (list) {
+      this.addListSubview(list);
     }.bind(this));
 
     var newListForm = new TrelloClone.Views.NewList({ collection: this.model.lists() });
     this.addSubview('div.new-list-form', newListForm);
   },
 
-  addBoardSubview: function (list) {
-    var listView = new TrelloClone.Views.BoardShowItem({
+  addListSubview: function (list) {
+    var listView = new TrelloClone.Views.ListShow({
       model: list
     });
 
-    this.addSubview('ul.board-list-group', listView);
+    this.addSubview('div.board-list-group', listView);
   },
 
-
+  removeListSubview: function (list) {
+    this.removeModelSubview('div.board-list-group', list);
+  },
 
   render: function () {
     var content = this.template({ board: this.model });
     this.$el.html(content);
 
-    this. attachSubviews();
+    this.attachSubviews();
     return this;
   }
 

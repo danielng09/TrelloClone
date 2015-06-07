@@ -1,5 +1,5 @@
 TrelloClone.Views.NewList = Backbone.View.extend({
-  className: 'new-list',
+  className: 'list new-list',
   events: {
     'submit .new-list': 'postList'
   },

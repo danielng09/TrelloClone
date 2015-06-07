@@ -4,7 +4,7 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
     'click button': 'postBoard'
   },
 
-  template: JST['boards/new_board'],
+  template: JST['boards/new'],
 
   render: function () {
     var content = this.template({ list: this.model });
