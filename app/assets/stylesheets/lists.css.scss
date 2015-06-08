@@ -1,8 +1,6 @@
 div.list {
   float: left;
   background: rgba(0, 0, 0, 0);
-  // rgba(77, 77, 77, 0.3);
-  // http://www.color-hex.com/color-palette/4164
   border: white solid 1px;
   border-radius: 15px;
   margin: 0 25px;
@@ -15,7 +13,7 @@ div.list.new-list {
   padding: 10px 12px;
 }
 
-div.list:hover > button.list-hover {
+div.list:hover button.list-hover {
   display: block;
 }
 
