@@ -21,6 +21,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     });
 
     this.addSubview('div.board-list-group', listView);
+
   },
 
   removeListSubview: function (list) {

@@ -1,12 +1,12 @@
 div.list {
   float: left;
-  border: #0099FF 5px solid;
-  background-color: #ADD6FF;
-  border-radius: 25px;
-  padding: 15px;
+  border: black 4px solid;
+  background-color: #DADADA;
+  border-radius: 15px;
   margin: 25px;
   width: 200px;
-  min-height: 300px;
+  min-height: 400px;
+  position: relative;
 }
 
 div.list.new-list {
@@ -15,4 +15,31 @@ div.list.new-list {
 
 div.card {
   height: 23px;
+  // border: black 2px solid;
+  background-color: #FEFEFE;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin: 10px 10px;
+}
+
+form.new-card {
+  position: absolute;
+  bottom: 5px;
+  padding: 0 15px;
+}
+
+div.card:hover > button.card-hover {
+  display: block;
+}
+
+button.card-hover {
+  display: none;
+}
+
+div.list:hover > button.list-hover {
+  display: block;
+}
+
+button.list-hover {
+  display: none;
 }

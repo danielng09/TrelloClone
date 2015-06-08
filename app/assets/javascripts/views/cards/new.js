@@ -1,5 +1,5 @@
 TrelloClone.Views.CardNew = Backbone.View.extend({
-  className: 'card new-card',
+  className: 'new-card',
   events: {
     'submit .new-card': 'postCard'
   },
