@@ -1,4 +1,5 @@
 TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
+  className: "board",
   template: JST['boards/show'],
 
   initialize: function (options) {
@@ -33,6 +34,23 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.attachSubviews();
+
+    $( "#list-sortable" ).sortable({
+      connectWith: "div"
+    });
+
+    $( "#list-sortable" ).disableSelection();
+
+    $( "#card-sortable" ).sortable({
+      connectWith: "div"
+    });
+
+    $( "#card-sortable" ).disableSelection();
+
+    $( "#card-sortable, #list-sortable" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
     return this;
   }
 

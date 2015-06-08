@@ -1,39 +1,18 @@
 div.list {
   float: left;
-  border: black 4px solid;
-  background-color: #DADADA;
+  background: rgba(0, 0, 0, 0);
+  // rgba(77, 77, 77, 0.3);
+  // http://www.color-hex.com/color-palette/4164
+  border: white solid 1px;
   border-radius: 15px;
-  margin: 25px;
+  margin: 0 25px;
   width: 200px;
   min-height: 400px;
   position: relative;
 }
 
 div.list.new-list {
-  padding: 12px;
-}
-
-div.card {
-  height: 23px;
-  // border: black 2px solid;
-  background-color: #FEFEFE;
-  border-radius: 5px;
-  padding: 0 5px;
-  margin: 10px 10px;
-}
-
-form.new-card {
-  position: absolute;
-  bottom: 5px;
-  padding: 0 15px;
-}
-
-div.card:hover > button.card-hover {
-  display: block;
-}
-
-button.card-hover {
-  display: none;
+  padding: 10px 12px;
 }
 
 div.list:hover > button.list-hover {
