@@ -5,6 +5,10 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
     'click button.delete-card': "deleteCard"
   },
 
+  initialize: function (options) {
+    this.$el.attr("data-id", this.model.id);
+  },
+
   render: function () {
     var content = this.template({ card: this.model });
     this.$el.html(content);

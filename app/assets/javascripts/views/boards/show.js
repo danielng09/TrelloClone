@@ -35,20 +35,37 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 
     this.attachSubviews();
 
+    var board = this;
     $( "#list-sortable" ).sortable({
       connectWith: "div"
     });
 
+
     $( "#list-sortable" ).disableSelection();
 
     $( "#card-sortable" ).sortable({
-      connectWith: "div"
+      connectWith: "div",
+
     });
 
     $( "#card-sortable" ).disableSelection();
 
     $( "#card-sortable, #list-sortable" ).sortable({
-      connectWith: ".connectedSortable"
+      connectWith: ".connectedSortable",
+      update: function (ele) {
+        var orderOfLists = $(ele.target).children().toArray().map(function(ele) {
+          return $(ele).data('id');
+        });
+        var lists = board.model.lists();
+        for (var i = 0; i < orderOfLists.length; i++) {
+          var list = lists.at(i);
+          var newOrd = orderOfLists.indexOf(list.id);
+          list.set({
+            "ord": newOrd
+          });
+          list.save();
+        }
+      }
     }).disableSelection();
 
     return this;
